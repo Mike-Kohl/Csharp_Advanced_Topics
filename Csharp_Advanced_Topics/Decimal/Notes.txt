@@ -8,6 +8,5 @@
 - Significantly slower than FP calculations
 - Not standard/supported on other systems(e.g. GPU)
 
-test
 
 

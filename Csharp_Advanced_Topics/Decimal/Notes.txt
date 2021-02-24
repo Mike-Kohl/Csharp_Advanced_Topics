@@ -1,0 +1,13 @@
+﻿System.Decimal
+==============
+- 128-bit decimal type
+- Range from - to +9,228,162,514,264, 337, 593, 543, 950, 335
+- Suitable for financial calculations
+- Not subject to Floating-Point representation errors
+	in other words, 0.1m + 0.2m == 0.3m
+- Significantly slower than FP calculations
+- Not standard/supported on other systems(e.g. GPU)
+
+
+
+

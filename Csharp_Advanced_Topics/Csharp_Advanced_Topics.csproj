@@ -55,6 +55,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BigInteger\Notes.txt" />
+    <Content Include="Decimal\Notes.txt" />
+    <Content Include="Floating-Point Values\Notes.txt" />
     <Content Include="Integral Types\Notes.txt" />
     <Content Include="Overview.txt" />
   </ItemGroup>

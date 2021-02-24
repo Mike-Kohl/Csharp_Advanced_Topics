@@ -6,3 +6,11 @@ C:\Users\Michael\source\repos\Csharp_Advanced_Topics\Csharp_Advanced_Topics\obj\
 C:\Users\Michael\source\repos\Csharp_Advanced_Topics\Csharp_Advanced_Topics\obj\Debug\Csharp_Advanced_Topics.sourcelink.json
 C:\Users\Michael\source\repos\Csharp_Advanced_Topics\Csharp_Advanced_Topics\obj\Debug\Csharp_Advanced_Topics.exe
 C:\Users\Michael\source\repos\Csharp_Advanced_Topics\Csharp_Advanced_Topics\obj\Debug\Csharp_Advanced_Topics.pdb
+C:\Users\mkohl\source\repos\Csharp_Advanced_Topics\Csharp_Advanced_Topics\bin\Debug\Csharp_Advanced_Topics.exe.config
+C:\Users\mkohl\source\repos\Csharp_Advanced_Topics\Csharp_Advanced_Topics\bin\Debug\Csharp_Advanced_Topics.exe
+C:\Users\mkohl\source\repos\Csharp_Advanced_Topics\Csharp_Advanced_Topics\bin\Debug\Csharp_Advanced_Topics.pdb
+C:\Users\mkohl\source\repos\Csharp_Advanced_Topics\Csharp_Advanced_Topics\obj\Debug\Csharp_Advanced_Topics.csprojAssemblyReference.cache
+C:\Users\mkohl\source\repos\Csharp_Advanced_Topics\Csharp_Advanced_Topics\obj\Debug\Csharp_Advanced_Topics.csproj.CoreCompileInputs.cache
+C:\Users\mkohl\source\repos\Csharp_Advanced_Topics\Csharp_Advanced_Topics\obj\Debug\Csharp_Advanced_Topics.sourcelink.json
+C:\Users\mkohl\source\repos\Csharp_Advanced_Topics\Csharp_Advanced_Topics\obj\Debug\Csharp_Advanced_Topics.exe
+C:\Users\mkohl\source\repos\Csharp_Advanced_Topics\Csharp_Advanced_Topics\obj\Debug\Csharp_Advanced_Topics.pdb

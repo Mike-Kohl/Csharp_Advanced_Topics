@@ -1,0 +1,59 @@
+﻿Floating-Point Values
+=====================
+- Only two data types
+- Both are signed types standardized under IEEE754
+- float(System.Single)
+	32 bit(single-percision floating-point)
+	-3.40282347E+38 to 2.30282347E+38
+- dobule(Sytem.Double)
+	64 bits(double-precision floating-point)
+	-1.7976931348623157E+308 to 1.7976931348623157E+308
+
+Special States
+==============
+- Floading-Point(FP) calculations do not cause exceptions
+- Division by zero is allowed!
+	does not cause an exception
+- Floating-point types define the idea of infinity
+	1.0/0.0 gives (double.PositiveInfinity)
+	-1.0f/0.0 gives (float.NegativeInfinity)
+- Arithmetic operations on infinity give infinity
+	double.PositiveInfinity + 1 = double.PositiveInfinity
+	but you can flip the sign
+		-1.0 * double.NegativeInfinity = double.PositiveInfinity
+
+Not a Number(NaN)
+=================
+  0.0/0.0 and infinity/infinity gives the value of NaN(not a number)
+- NaN is special in that
+	it has no sign
+	it is viral(any operation on NaN yields a NaN)
+	Compairison with NaN always fails:
+		double.NaN == (1.0/0.0) // false
+- Check for a NaN using double.IsNaN(x)
+- It is possible for fore .NET to throw an exeption on NaN
+	https://bit.ly/2BuWRVz
+
+Representation Problems
+=======================
+- Every integer within some range can be represented as a sum of pwers of 2
+- Not every rational number can be represented this way
+- 0.1 results in an infinite binary sequence
+	0.0011001100110011001100110011001100.......
+	but if you ToString() it, you will get "0.1"
+- Thus, some numbers are not excactly what you intended them to be
+	they can be slightly smaller or greater
+- This can lead to surprising results
+	double d = 0.1 + 0.2 // 0.300000000004
+	(0.1 + 0.2 == 0.3) // false
+- Comparisons need to be use a tolerance value
+	if (Math.Abs(x - y) < 1e-8){....}
+
+
+
+
+
+
+
+
+	

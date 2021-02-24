@@ -1,0 +1,17 @@
+﻿BigInteger
+===============
+
+- An integer or arbitrary size
+- Lives in System.Runtime.Numerics
+- Similarites compared to integer value types:
+	Also throws a DivideByZeroException
+- Differences
+	Is a struct
+	Cannot overflow
+	Is immutable
+		x++ does not modify underlying object, instad
+		creates new object that replaces the original one
+		in other words, BigInteger behaves just as a string does
+		performance implications!
+
+

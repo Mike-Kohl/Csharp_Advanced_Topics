@@ -1,0 +1,95 @@
+﻿Integral Types and limits
+-------------------------
+8 bit
+signed: sbype(System.Sbyte) -128 to 127
+unsigned: byte (System.Byte) 0 to 255
+
+16-bit
+signed: short(System.Int16) -32768 to 32767
+unsigned: ushort(System.UInt16) 0 to 65535
+
+32-bit
+signed: int(System.Int32) -2,147,483,648 to 2,147,483,647
+unsigned: uint(System.UInt32) 0 to 4,294,967,295
+
+64-bit
+signed: long(system.int64) -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+unsigned: ulong(System.UInt64) 0 to 18,446,744,073,709,551,615
+
+Integer Specifics
+-----------------
+Each data type as a minimum and a maximum value
+e.g. int.Minvalue, long.MaxValue
+
+Conversion functions from strings
+---------------------------------
+int value = int.parse("123");
+throws on invalid string
+
+bool success = int.TryPase("123", out int value);
+returns fals if failed
+
+These are often hand-optimized in performance-critical scenarios
+
+default(T) returns 0 for all types
+
+Overflow
+--------
+- A situation where you need more bits than are available is called an overflow
+- Example: adding 1 to the largest number, or subtracting 1 from the smallest
+- Compile-time error:
+		var x = int.MinValue -1;
+		error CS0220: The operation overflows at comile time in checked mode
+- Run-time behavior:
+		Not handled by default, you get 'garbage' value
+
+Division by Zero
+----------------
+- Compile-time error
+       var x = 1/0;
+       error CS0020:Division by constant zero
+- Run-time exceiption
+       var zero = 0;
+       var x = 1/zero;
+       System.DivideByZeroException: Attempted to divide by zero
+- Divison by zero with integers is a problem
+       No bit state to represent a 'speccial value'
+       Thus, division by zero is simply not allowed anywhere
+
+Checked and Unchecked 
+---------------------
+- Checked mode = please be sure to check this for me
+- Unchecked mode = please don't check this, I take responsibility
+- These scopes only affect overflow; they do not affect division by zero
+- Division by zero will always throw an exception
+
+Overflow and Checked
+--------------------
+- by default, overflow is disallowed at compile-time(if found ) and is totally allowed at runtime
+- We can revers both of these situations
+- Allow obvious overflow at compilt-time
+- unchecked{
+   var n = int.Minvalue -1;
+  }
+  //this will compile just fine
+
+- checked
+ {
+   try
+   {
+     int x2 = int.MinValue -1;
+   }
+   catch(OverflowException e)
+   {
+      Console.WriteLine(e.Message);
+   }
+  }
+
+Detect Overflow Everywhere
+--------------------------
+Project Settings -> Build -> Advanced.. ->
+Check for arithmetic overflow/underflow
+- This will throw on all overflow situations
+- Can wrap in ordinary try-catch ( no checked content needed) to 
+  catch OverflowException
+

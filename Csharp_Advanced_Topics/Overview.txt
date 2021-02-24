@@ -1,0 +1,7 @@
+﻿Overview
+
+- Integral Types (build-in, BigInteger)
+- Floating-Point Types (IEEE754, Decimal)
+- Issues with numerics: division by zero, overflow
+- SIMD intrinsics
+- Generalized SIMD Vector<T> type

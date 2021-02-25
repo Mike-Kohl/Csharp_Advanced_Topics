@@ -60,6 +60,7 @@
     <Content Include="Floating-Point Values\Notes.txt" />
     <Content Include="Integral Types\Notes.txt" />
     <Content Include="Overview.txt" />
+    <Content Include="SIMD\Notes.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

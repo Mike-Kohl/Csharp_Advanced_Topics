@@ -1,0 +1,142 @@
+﻿SIMD
+====
+
+Vector Types
+============
+
+- The CPU has registers larger than 64 bit
+	128, 256, 512 bit - depends on the CPU
+
+- Those registers are not for data types with wider range
+- Instead, they are used to packed values
+- A 1280-bit register can pack
+	16 bytes
+	4 int values
+	4 float values
+	2 double values
+
+Motivation
+==========
+- Processor instruction (e.g. add)
+	have a cost
+		Number of clock cycles
+
+- Add < multiply < divide < square root ( left to right, right side cost more)
+- Exact costs vary by CPU and data type ( float vs Double)
+- A lot of effort is spent on optimization
+	ax(2) + bx -> x(ax + b);
+
+- Operations need to be performed on sets of values
+	e.g. add two arrays
+
+- SIMD lets us accelerate thes calculations
+	in the context of a single CPU core
+
+Registers ||
+============
+- SIMD - Single instruction Multiple Data
+- Modern CPUs provides several large registers for SIMD
+- Registers vary in size(128, 256, 512 bits)
+	Larger resister = more data that can be packed
+
+- Need to be supported by the CPU
+	implies compatibility issues
+
+- You are unlikely to achieve full equivalence between ordinary and vectorized Floating-points calculations
+
+Registers |||
+=============
+
+- SIMD technologies
+	AMD: 3DNow!
+	Intel: MMX, SSE
+	Both: AVX
+
+- Streaming SIMD Extensions (SSE)
+	128-bit registers(xmm0..xmm7)
+
+- Advanced Vector Extentions(AVX)
+	New instructions supported by AMD/Intel(since 2011)
+	AVX extends xmm to ymm(bits 128.. 255)
+	AVX-512 further adds zmm(bits 256...511)
+
+Instructions
+============
+
+- SIMD is supported with special instructions
+- Integral & floating-point operations
+- Scalar vs Packted data
+	addss adds just the low single-precision value
+	addps adds all four single-precision values
+
+How to use in .NET?
+===================
+- Use hardware intrinsics (System.Runtime.Intrinsics)
+- Use specific data types
+- Use general Vector<T>
+
+
+Intrinsics
+==========
+
+- Intrinsics are sinple wrappers around SIMD types and operations
+- Sytem.Runtime.Intrinsics namespace
+- You can check the level of SIMD support using
+	SSE classes (Sse, Sse2, Ss3,..Ssse3, Sse43)
+	AVX classes(Avx, Avx2,...)
+
+- E.g. if(Avx.IsSupported){...}
+	You can use static members(e.g. Avx2.Add())
+	These members operate on VectorXxx<T> types
+
+Intrinsic Vector Types
+======================
+
+- You create a 64/128/256/... -bit vector using VectorXxx.Create()
+- var x = Vector128.Create(1.0f);
+	creates an object of type Vector128<float>
+
+- Now you can use Sse/Avx classes to operate on this type
+	Assuming you have necessary level of support
+
+- Vector128<float> x = Vactor128.Create(1.0f)
+  Vector128<float> y = Vactor128.Create(1.0f)
+  var f = Sse.Add(x,y);
+
+- No operator support: intrinsic calls map onto CPU instructions!
+
+Adding 4 pairs of Floats
+========================
+var v1 = Vector128.Create(1.0f, 2.0f, 3.0f, 4.0f);
+var v2 = Vector128.Create(1.0f, 2.0f, 4.0f, 8.0f);
+var sum = Sse.Add(v1, v2);
+Console.WriteLine(sum);
+
+result <2,4,7,12>
+
+Division by Zero and Overflow
+=============================
+
+- SIMD is primarily used for FP calculations
+- Division by zero is not a problem
+	Intrinsic division is only allowed for FP types which have infinity
+
+- There is no overflow detection
+	Checked only works for C# ops, not intrinsics
+	Adding bypes 256 and 1 gives zero
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

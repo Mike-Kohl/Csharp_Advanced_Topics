@@ -17,3 +17,6 @@ C:\Users\mkohl\source\repos\Csharp_Advanced_Topics\Csharp_Advanced_Topics\obj\De
 C:\Users\mkohl\Source\Repos\Csharp_Advanced_Topics\Csharp_Advanced_Topics\bin\Debug\System.Numerics.Vectors.dll
 C:\Users\mkohl\Source\Repos\Csharp_Advanced_Topics\Csharp_Advanced_Topics\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\mkohl\Source\Repos\Csharp_Advanced_Topics\Csharp_Advanced_Topics\obj\Debug\Csharp_Advanced_Topics.csproj.CopyComplete
+C:\Users\Michael\Source\Repos\Csharp_Advanced_Topics\Csharp_Advanced_Topics\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Michael\Source\Repos\Csharp_Advanced_Topics\Csharp_Advanced_Topics\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\Michael\Source\Repos\Csharp_Advanced_Topics\Csharp_Advanced_Topics\obj\Debug\Csharp_Advanced_Topics.csproj.CopyComplete

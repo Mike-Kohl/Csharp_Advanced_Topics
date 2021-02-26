@@ -1,0 +1,13 @@
+﻿Reflection
+==========
+
+Overview
+========
+- Reflection lets us programmatically investigate assemblies
+- Can learn about their structure and internal mechanics
+- Can be used to operate on otherwise inaccessible types
+- Enables other language features (e.g. Attributes)
+
+System.Type
+===========
+- abstract class

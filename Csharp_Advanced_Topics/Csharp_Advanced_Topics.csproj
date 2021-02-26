@@ -68,6 +68,7 @@
     <Content Include="Overview.txt" />
     <Content Include="Numerics\SIMD\Notes.txt" />
     <Content Include="Numerics\Vector\Notes.txt" />
+    <Content Include="Reflection\Notes.txt" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

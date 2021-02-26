@@ -2,6 +2,7 @@
 using System.Numerics;
 using System.Windows;
 using System;
+using System.Reflection;
 
 namespace Csharp_Advanced_Topics
 {
@@ -9,12 +10,43 @@ namespace Csharp_Advanced_Topics
     {
         static void Main(string[] args)
         {
-            VectorSamples();
+            //VectorSamples();
+            ReflectionSamples();
         }
 
         private static void VectorSamples() 
         {
             Vector1();
+        }
+
+        private static void ReflectionSamples() 
+        {
+            Reflection1();
+        }
+
+        private static void Reflection1() 
+        {
+            Type t = typeof(int);
+
+            //Get the public methods
+            MethodInfo[] methodInfoPublic = t.GetMethods(BindingFlags.Public | BindingFlags.Instance |
+                BindingFlags.DeclaredOnly);
+            Console.WriteLine("\nThe number of public methods is {0}", methodInfoPublic.Length);
+
+            // Display all the methods
+            DisplayMethodInfo(methodInfoPublic);
+
+
+
+        }
+
+        private static void DisplayMethodInfo(MethodInfo[] methodInfo) 
+        {
+            for (int i = 0; i < methodInfo.Length; i++)
+            {
+                MethodInfo info = (MethodInfo)methodInfo[i];
+                Console.WriteLine("\nThe name of the method is {0}", methodInfo[i]);
+            }
         }
 
         private static void Vector1() 

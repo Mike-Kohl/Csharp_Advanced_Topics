@@ -14,14 +14,11 @@ namespace Csharp_Advanced_Topics
             ReflectionSamples();
         }
 
-        private static void VectorSamples() 
-        {
-            Vector1();
-        }
-
         private static void ReflectionSamples() 
         {
-            Reflection1();
+            //Reflection1();
+            //Reflection2();
+            Reflection3();
         }
 
         private static void Reflection1() 
@@ -36,8 +33,34 @@ namespace Csharp_Advanced_Topics
             // Display all the methods
             DisplayMethodInfo(methodInfoPublic);
 
+            // Get the nonpublic methods
+            MethodInfo[] methodInfoPrivate = t.GetMethods(BindingFlags.NonPublic | BindingFlags.Instance |
+                BindingFlags.DeclaredOnly);
+
+            Console.WriteLine("\nThe number of private methods is {0}", methodInfoPrivate.Length);
+
+            // display all the methods
+            DisplayMethodInfo(methodInfoPrivate);
 
 
+        }
+
+        private static void Reflection2() 
+        {
+            Type t = "Hello".GetType();
+            Console.WriteLine(t.FullName);
+            FieldInfo[] fieldInfo = t.GetFields();
+
+            for (int i = 0; i < fieldInfo.Length; i++)
+            {
+                Console.WriteLine(fieldInfo[i]);
+            }
+        }
+
+        private static void Reflection3() 
+        {
+            var s = typeof(string).Assembly;
+            Console.WriteLine(s);
         }
 
         private static void DisplayMethodInfo(MethodInfo[] methodInfo) 
@@ -46,10 +69,15 @@ namespace Csharp_Advanced_Topics
             {
                 MethodInfo info = (MethodInfo)methodInfo[i];
                 Console.WriteLine("\nThe name of the method is {0}", methodInfo[i]);
+
             }
         }
 
-        private static void Vector1() 
+        private static void VectorSamples()
+        {
+            Vector1();
+        }
+        private static void Vector1()
         {
             byte[] array1 = Enumerable.Range(1, 128)
                 .Select(x => (byte)x).ToArray();
@@ -67,7 +95,7 @@ namespace Csharp_Advanced_Topics
                 vresult.CopyTo(result, i);
             }
 
-        
+
         }
     }
 }

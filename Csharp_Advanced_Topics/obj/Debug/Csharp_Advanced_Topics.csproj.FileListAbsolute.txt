@@ -20,3 +20,14 @@ C:\Users\mkohl\Source\Repos\Csharp_Advanced_Topics\Csharp_Advanced_Topics\obj\De
 C:\Users\Michael\Source\Repos\Csharp_Advanced_Topics\Csharp_Advanced_Topics\bin\Debug\System.Numerics.Vectors.dll
 C:\Users\Michael\Source\Repos\Csharp_Advanced_Topics\Csharp_Advanced_Topics\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\Michael\Source\Repos\Csharp_Advanced_Topics\Csharp_Advanced_Topics\obj\Debug\Csharp_Advanced_Topics.csproj.CopyComplete
+C:\Users\mkohl\Documents\Visual Studio 2019\Projects\Csharp_Advanced_Topics\Csharp_Advanced_Topics\bin\Debug\Csharp_Advanced_Topics.exe.config
+C:\Users\mkohl\Documents\Visual Studio 2019\Projects\Csharp_Advanced_Topics\Csharp_Advanced_Topics\bin\Debug\Csharp_Advanced_Topics.exe
+C:\Users\mkohl\Documents\Visual Studio 2019\Projects\Csharp_Advanced_Topics\Csharp_Advanced_Topics\bin\Debug\Csharp_Advanced_Topics.pdb
+C:\Users\mkohl\Documents\Visual Studio 2019\Projects\Csharp_Advanced_Topics\Csharp_Advanced_Topics\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\mkohl\Documents\Visual Studio 2019\Projects\Csharp_Advanced_Topics\Csharp_Advanced_Topics\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\mkohl\Documents\Visual Studio 2019\Projects\Csharp_Advanced_Topics\Csharp_Advanced_Topics\obj\Debug\Csharp_Advanced_Topics.csprojAssemblyReference.cache
+C:\Users\mkohl\Documents\Visual Studio 2019\Projects\Csharp_Advanced_Topics\Csharp_Advanced_Topics\obj\Debug\Csharp_Advanced_Topics.csproj.CoreCompileInputs.cache
+C:\Users\mkohl\Documents\Visual Studio 2019\Projects\Csharp_Advanced_Topics\Csharp_Advanced_Topics\obj\Debug\Csharp_Advanced_Topics.sourcelink.json
+C:\Users\mkohl\Documents\Visual Studio 2019\Projects\Csharp_Advanced_Topics\Csharp_Advanced_Topics\obj\Debug\Csharp_Advanced_Topics.csproj.CopyComplete
+C:\Users\mkohl\Documents\Visual Studio 2019\Projects\Csharp_Advanced_Topics\Csharp_Advanced_Topics\obj\Debug\Csharp_Advanced_Topics.exe
+C:\Users\mkohl\Documents\Visual Studio 2019\Projects\Csharp_Advanced_Topics\Csharp_Advanced_Topics\obj\Debug\Csharp_Advanced_Topics.pdb

@@ -18,7 +18,9 @@ namespace Csharp_Advanced_Topics
         {
             //Reflection1();
             //Reflection2();
-            Reflection3();
+            //Reflection3();
+            //Reflection4();
+            Reflection5();
         }
 
         private static void Reflection1() 
@@ -59,8 +61,26 @@ namespace Csharp_Advanced_Topics
 
         private static void Reflection3() 
         {
-            var s = typeof(string).Assembly;
-            Console.WriteLine(s);
+            var a = typeof(string).Assembly;
+            var types = a.GetTypes();
+            Console.WriteLine(types);            
+        }
+
+        private static void Reflection4() 
+        {
+            var t = Type.GetType("System.Int64");
+            Console.WriteLine(t.FullName);
+            Console.WriteLine(t.GetMethods());
+        }
+
+        private static void Reflection5() 
+        {
+            // back tick 1 - for generic list
+            //var t = Type.GetType("System.Collections.Generic.List`1");
+
+            // back tick 2 - for dictionaries
+            var t = Type.GetType("System.Collections.Generic.Dictionary`2");
+            Console.WriteLine(t.GetMethods());
         }
 
         private static void DisplayMethodInfo(MethodInfo[] methodInfo) 

@@ -20,7 +20,15 @@ namespace Csharp_Advanced_Topics
             //Reflection2();
             //Reflection3();
             //Reflection4();
-            Reflection5();
+            //Reflection5();
+
+            /* Reflection - Inspection */
+            //Reflection6();
+
+            /* Reflection - Construction */
+            //Reflection7();
+            //Reflection8();
+            Reflection9();
         }
 
         private static void Reflection1() 
@@ -81,6 +89,67 @@ namespace Csharp_Advanced_Topics
             // back tick 2 - for dictionaries
             var t = Type.GetType("System.Collections.Generic.Dictionary`2");
             Console.WriteLine(t.GetMethods());
+        }
+
+        private static void Reflection6() 
+        {
+            var t = typeof(Guid);
+            Console.WriteLine(t.Name);
+
+            var ctors = t.GetConstructors();
+            Console.WriteLine(ctors);
+
+            foreach (var item in ctors)
+            {
+                Console.WriteLine(item);
+                var pars = item.GetParameters();
+                for (var i = 0; i < pars.Length; i++)
+                {
+                    var par = pars[i];
+                    Console.WriteLine($"--{par.ParameterType.Name} {par.Name} ");
+                }
+            }
+
+            
+        }
+
+        private static void Reflection7() 
+        {
+            var t = typeof(bool);
+            var b = Activator.CreateInstance(t);
+            var b2 = Activator.CreateInstance<bool>();
+
+            var wc = Activator.CreateInstance("System", "System.Timers.Timer");
+            Console.WriteLine(wc);
+
+            Console.WriteLine(wc.Unwrap());
+
+        }
+
+        private static void Reflection8() 
+        {
+            var alType = Type.GetType("System.Collections.ArrayList");
+            Console.WriteLine(alType);
+
+            //get default constructor
+            var alCtor = alType.GetConstructor(Array.Empty<Type>());
+            Console.WriteLine(alCtor);
+
+            //make an instance of the arraylist
+            var al = alCtor.Invoke(Array.Empty<object>());
+            Console.WriteLine(al);
+        }
+
+        private static void Reflection9() 
+        {
+            var st = typeof(string);
+            var ctor = st.GetConstructor(new[] { typeof(char[]) });
+            var str = ctor.Invoke(new object[] 
+            { 
+                new []{'t', 'e', 's', 't'}
+            });
+
+            Console.WriteLine(str);
         }
 
         private static void DisplayMethodInfo(MethodInfo[] methodInfo) 

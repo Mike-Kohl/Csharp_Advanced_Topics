@@ -28,7 +28,11 @@ namespace Csharp_Advanced_Topics
             /* Reflection - Construction */
             //Reflection7();
             //Reflection8();
-            Reflection9();
+            //Reflection9();
+            // Reflection10();
+            Reflection11();
+
+            /* Reflection - Invocation */
         }
 
         private static void Reflection1() 
@@ -150,6 +154,35 @@ namespace Csharp_Advanced_Topics
             });
 
             Console.WriteLine(str);
+        }
+
+        private static void Reflection10() 
+        {
+            var listType = Type.GetType("System.Collections.Generic.List`1");
+            var listOfIntType = listType.MakeGenericType(typeof(int));
+            var listOfIntCtor = listOfIntType.GetConstructor(Array.Empty<Type>());
+            var theList = listOfIntCtor.Invoke(Array.Empty<object>());
+            Console.WriteLine(theList);           
+        }
+
+        private static void Reflection11() 
+        {
+            var charType = typeof(char);
+            Array.CreateInstance(charType, 10);
+            var charArrayType = charType.MakeArrayType();
+            var charArrayCtor = charArrayType.GetConstructor(new[] { typeof(int) });
+
+            var arr = charArrayCtor.Invoke(new object[] { 20 });
+            char[] arr2 = (char[])arr;
+            Console.WriteLine(arr2);
+            arr2[0] = 'z';
+            arr2[10] = 'a';
+            for (int i = 0; i < arr2.Length; i++)
+            {
+                Console.WriteLine(arr2[i]);
+            }
+
+           
         }
 
         private static void DisplayMethodInfo(MethodInfo[] methodInfo) 

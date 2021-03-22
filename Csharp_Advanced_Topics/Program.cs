@@ -30,9 +30,11 @@ namespace Csharp_Advanced_Topics
             //Reflection8();
             //Reflection9();
             // Reflection10();
-            Reflection11();
+            //Reflection11();
 
             /* Reflection - Invocation */
+            //Reflection12();
+            Reflection13();
         }
 
         private static void Reflection1() 
@@ -180,9 +182,30 @@ namespace Csharp_Advanced_Topics
             for (int i = 0; i < arr2.Length; i++)
             {
                 Console.WriteLine(arr2[i]);
-            }
+            }           
+        }
 
-           
+        private static void Reflection12()
+        {
+            var s = "this is a string     ";
+            var t = typeof(string);
+            var trimMethod = t.GetMethod("Trim", Array.Empty<Type>());
+            var result = trimMethod.Invoke(s,Array.Empty<object>());
+            Console.WriteLine($"'{result}'");
+        }
+
+        private static void Reflection13()
+        {
+            //bool int.TryParse(str, out int n)
+            var numberString = "123";
+            var parseMethod = typeof(int).GetMethod("TryParse", 
+                new[] {typeof(string), typeof(int).MakeByRefType()});
+
+            object[] args = {numberString, null };
+            var ok = parseMethod.Invoke(null, args);
+            Console.WriteLine(ok);
+
+        
         }
 
         private static void DisplayMethodInfo(MethodInfo[] methodInfo) 
